@@ -1,4 +1,4 @@
-/* https://www.w3schools.com/nodejs/nodejs_filesystem.asp */ 
+/* https://www.w3schools.com/nodejs/nodejs_filesystem.asp */
 var http = require('http');
 var fs = require('fs');
 http.createServer(function (req, res) {
@@ -13,5 +13,9 @@ http.createServer(function (req, res) {
     fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
         if (err) throw err;
         console.log('Saved!');
-    });   
+    });
+    fs.appendFile('mynewfile1.txt', ' This is my text.', function (err) {
+        if (err) throw err;
+        console.log('Updated!');
+    });
 }).listen(8080);
